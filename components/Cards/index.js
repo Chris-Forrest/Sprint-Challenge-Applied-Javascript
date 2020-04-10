@@ -45,5 +45,8 @@ image.src = data.authorPhoto;
 authorName.textContent = `By: ${data.authorName}`
 
 return cardEl
-
 }
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+
+
+
