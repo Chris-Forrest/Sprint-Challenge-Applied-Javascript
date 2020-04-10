@@ -47,6 +47,38 @@ authorName.textContent = `By: ${data.authorName}`
 return cardEl
 }
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response => {
+    const articleData = response.data.articles;
+    const javaScript = articleData.javascript;
+    const bootStrap = articleData.bootstrap;
+    const technology = articleData.technology;
+    const jquery = articleData.jquery;
+    const node = articleData.node;
 
+    javaScript.forEach(item => {
+        cardsContainer.appendChild(cardMaker(item));
+    })
+
+    bootStrap.forEach(item => {
+        cardsContainer.appendChild(cardMaker(item));
+    })
+
+    technology.forEach(item => {
+        cardsContainer.appendChild(cardMaker(item));
+    })
+
+    jquery.forEach(item => {
+        cardsContainer.appendChild(cardMaker(item));
+    })
+
+    node.forEach(item => {
+        cardsContainer.appendChild(cardMaker(item));
+    })
+
+    console.log(javaScript)
+
+})
+
+const cardsContainer = document.querySelector('.cards-container')
 
 
