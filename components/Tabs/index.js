@@ -40,6 +40,7 @@ function tabMaker(){
     const tabEl = document.createElement('div')
     tabEl.classList.add('tab')
 
+    return tabEl;
 }
 
 const tabsEl = document.querySelector('.topics')
