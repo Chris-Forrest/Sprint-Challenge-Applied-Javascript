@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM is the data representation of objects that comprise the structure and content of a document made of html or xml
+
 2. What is an event?
+
+Events are things that happen to html elements such as mouseover, dblclick, mouseout etc. 
 
 3. What is an event listener?
 
+It is an inbuilt function that waits for an event to take place before it excutes a piece of code 
+
 4. Why would we convert a NodeList into an Array?
 
+You would convert a NodeList into an array when you wanted to perform a method on the NodeList that you wouldn't be able to without it being an array such as .map , .filter or .forEach to name a few
+
 5. What is a component?
+
+A component is a piece of code that can be reused 
 
 ### Git Set up
 
