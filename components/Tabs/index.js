@@ -7,3 +7,40 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+
+const getTopic = () =>{
+    topics.forEach ( item => 
+        axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+        .then(
+            whatIGet => {
+              console.log(whatIGet)  //topics[item]
+            }
+        ))
+       .catch(
+           errorMessage => {
+               console.log(errorMessage)
+           }
+       ) 
+}
+console.log(getTopic())
+/*axios.get('https://lambda-times-backend.herokuapp.com/topics')
+.then(
+    whatIGet => {
+        console.log(whatIGet)
+    }
+)
+.catch(
+    errorMessage => {
+        console.log(errorMessage)
+    }
+)*/
+
+function tabMaker(){
+    const tabEl = document.createElement('div')
+    tabEl.classList.add('tab')
+
+}
+
+const tabsEl = document.querySelector('.topics')
+
