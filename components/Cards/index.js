@@ -46,8 +46,6 @@ headLine.textContent = `headline: ${data.headLine}`
 image.src = 
 authorName.textContent = `authorName: ${data.authorName}`
 
-
-
-
+return cardEl
 
 }
