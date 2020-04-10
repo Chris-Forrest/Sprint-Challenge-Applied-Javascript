@@ -9,21 +9,7 @@
 //    <div class="tab">topic here</div>
 
 
-const getTopic = () =>{
-    topics.forEach ( item => 
-        axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
-        .then(
-            whatIGet => {
-              console.log(whatIGet)  //topics[item]
-            }
-        ))
-       .catch(
-           errorMessage => {
-               console.log(errorMessage)
-           }
-       ) 
-}
-console.log(getTopic())
+
 /*axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(
     whatIGet => {
@@ -35,13 +21,28 @@ console.log(getTopic())
         console.log(errorMessage)
     }
 )*/
+const topicsDiv = document.querySelector('.topics')
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+.then(whatIGet => {
+    const topics = whatIGet.data.topics
+    topics.forEach(item => {
+        const tab = document.createElement('div')
+        tab.classList.add('tab')
+        tab.textContent = item;
+        topicsDiv.appendChild(tab)
+    })
+})
 
-function tabMaker(){
-    const tabEl = document.createElement('div')
-    tabEl.classList.add('tab')
+/*axios.get('https://lambda-times-backend.herokuapp.com/topics')
+.then(response => {
+    const topics = response.data.topics;
+    topics.forEach(item => {
+        const tab = document.createElement('div')
+        tab.classList.add('tab')
+        tab.textContent = item;
+        topicsDiv.appendChild(tab)
+    })
+})
+.catch()*/
 
-    return tabEl;
-}
-
-const tabsEl = document.querySelector('.topics')
 

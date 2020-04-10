@@ -19,8 +19,6 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-
 //make elements
 function cardMaker(data){
 const cardEl = document.createElement('div')
@@ -42,9 +40,9 @@ headLine.classList.add('headline')
 divAuthor.classList.add('author')
 imgCntnr.classList.add('img-container')
 
-headLine.textContent = `headline: ${data.headLine}`
-image.src = 
-authorName.textContent = `authorName: ${data.authorName}`
+headLine.textContent = data.headline
+image.src = data.authorPhoto;
+authorName.textContent = `By: ${data.authorName}`
 
 return cardEl
 
